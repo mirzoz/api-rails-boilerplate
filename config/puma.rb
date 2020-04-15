@@ -10,7 +10,7 @@ threads min_threads_count, max_threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 4000.
 #
-port        ENV.fetch("PORT") { 4000 }
+port        ENV.fetch("PORT") { ENV['SERVER_PORT'] }
 
 # Specifies the `environment` that Puma will run in.
 #
