@@ -1,0 +1,25 @@
+Style/Copyright:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/DocumentationMethod:
+  Enabled: false
+AllCops:
+  EnabledByDefault: true
+  Exclude:
+    - 'Rakefile'
+    - 'Guardfile'
+    - 'config.ru'
+    - 'lib/**/*'
+    - 'test/**/*'
+    - 'config/**/*.rb'
+    - 'config/*.rb'
+    - 'db/**/*.rb'
+    - 'rockets/**/*'
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'spec/**/*'
+    - 'app/controllers/app/*.rb'
+    - 'app/controllers/devise/*.rb'
+    - 'app/controllers/application_controller.rb'
+    - 'Gemfile'

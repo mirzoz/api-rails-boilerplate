@@ -1,10 +1,11 @@
+# frozen_string_literal: false
+
 class SessionsController < Devise::SessionsController
   def create
     super { @token = current_token }
   end
 
-  def show
-  end
+  def show; end
 
   private
 

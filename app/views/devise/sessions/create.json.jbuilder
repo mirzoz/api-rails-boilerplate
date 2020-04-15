@@ -1,1 +1,3 @@
-json.token @token
+# frozen_string_literal: false
+
+json.token(@token)
