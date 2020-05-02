@@ -2,7 +2,7 @@
 require 'spec_helper'
 # require 'factory_girl'
 require 'active_support'
-require 'faker'
+require 'ffaker'
 require 'database_cleaner'
 require 'support/factory_bot'
 
