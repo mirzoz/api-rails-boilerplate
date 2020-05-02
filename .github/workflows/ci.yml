@@ -41,8 +41,8 @@ jobs:
           bundle exec rake db:schema:load
         env:
           RAILS_ENV: test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          DATABASE_USERNAME: postgres
+          DATABASE_PASSWORD: postgres
 
       - name: Checks code
         run: bundle exec rubocop
@@ -51,6 +51,6 @@ jobs:
         run: COVERAGE=true bundle exec rspec --require rails_helper
         env:
           RAILS_ENV: test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          DATABASE_USERNAME: postgres
+          DATABASE_PASSWORD: postgres
           JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
