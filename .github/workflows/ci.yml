@@ -1,56 +1,51 @@
-name: CI
-on: [push]
+name: QA
+
+on: [ pull_request ]
+
 jobs:
-  build:
+  rubocop:
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:12
-        ports:
-          - 5432:5432
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 2.6
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - run: git fetch --no-tags --prune origin
+    - uses: adwerx/pronto-ruby@v2.5
+      env:
+        GITHUB_TOKEN: 45f84d92a4a5ab59eccf20fbdbc5d769625caf07
+      with:
+        runners: >-
+          rubocop
+  test:
 
-      - name: Install dependent libraries
-        run: sudo apt-get install libpq-dev
+    runs-on: ubuntu-latest
 
-      - uses: actions/cache@v1
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
 
-      - name: Bundle install
-        run: |
-          gem install bundler
-          bundle config path vendor/bundle
-          bundle install --jobs 4 --retry 3
+    - name: Setup PostgreSQL
+      uses: Harmon758/postgresql-action@v1.0.0
+      with:
+        postgresql version: 10
+        postgresql db: ps-api-database
+        postgresql user: lenovo
+        postgresql password: lenovo
 
-      - name: Setup Database
-        run: |
-          cp config/database.yml.github-actions config/database.yml
-          bundle exec rake db:create
-          bundle exec rake db:schema:load
-        env:
-          RAILS_ENV: test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
 
-      - name: Checks code
-        run: bundle exec rubocop
+    - name: Dependencies
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        bundle exec rake
 
-      - name: Run RSpec
-        run: COVERAGE=true bundle exec rspec --require rails_helper
-        env:
-          RAILS_ENV: test
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          JWT_SECRET_KEY: ${{ secrets.JWT_SECRET_KEY }}
+    - name: Create Database
+      run: |
+        rake db:setup
+
+    - name: Run Test
+      run: |
+        bundle exec rspec
