@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_150645) do
   create_table "accounts", force: :cascade do |t|
     t.string "name"
     t.string "country"
+    t.integer "account_type", default: 0
     t.text "observation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

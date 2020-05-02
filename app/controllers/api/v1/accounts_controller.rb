@@ -6,7 +6,7 @@ module Api
       before_action :authenticate_user!
 
       def index
-        account = Account.all.select(:id, :name, :country)
+        account = Account.all
         render(json: account)
       end
     end
