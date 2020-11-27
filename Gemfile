@@ -34,8 +34,6 @@ gem "active_model_serializers", "~> 0.10.10"
 
 gem "rspec-rails", "~> 4.0"
 
-gem "rubocop", "~> 0.81.0"
-
 gem "acts_as_tenant", "~> 0.4.4"
 
 
@@ -48,6 +46,7 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem "rubocop", "~> 0.81.0"
 end
 
 group :test do
