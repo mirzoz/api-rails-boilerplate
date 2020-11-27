@@ -1,6 +1,5 @@
 # frozen_string_literal: false
 
-
 module Api
   module V1
     class RegistrationsController < Devise::SessionsController
