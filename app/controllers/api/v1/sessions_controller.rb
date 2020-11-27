@@ -3,6 +3,8 @@
 module Api
   module V1
     class SessionsController < Devise::SessionsController
+      before_action :authenticate_user!, only: :show
+
       def create
         resource = authenticate
         yield resource if block_given?
@@ -14,7 +16,9 @@ module Api
         end
       end
 
-      def show; end
+      def show
+        render json: UserSerializer.new(current_user).serializable_hash
+      end
 
       private
 

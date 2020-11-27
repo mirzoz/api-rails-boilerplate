@@ -7,14 +7,13 @@ Rails.application.routes.draw do
         sessions: 'api/v1/sessions',
       }
       devise_scope :user do
-        get 'users/current', to: 'sessions#show'
+        get 'users/me', to: 'api/v1/sessions#show'
       end
     end
   end
 
-  namespace :api do
-    namespace :v1 do
-      resources :accounts
-    end
-  end
+  # namespace :api do
+  #   namespace :v1 do
+  #   end
+  # end
 end
