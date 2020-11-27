@@ -30,12 +30,11 @@ gem "devise", "~> 4.7"
 
 gem "devise-jwt", "~> 0.6.0"
 
-gem "active_model_serializers", "~> 0.10.10"
-
 gem "rspec-rails", "~> 4.0"
 
 gem "acts_as_tenant", "~> 0.4.4"
 
+gem 'jsonapi-serializer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

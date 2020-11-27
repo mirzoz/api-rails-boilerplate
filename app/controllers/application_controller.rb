@@ -4,8 +4,11 @@ class ApplicationController < ActionController::API
   include ActionController::MimeResponds
   respond_to :json
 
+  private
+
   def authenticate_user!
-    super
-    render json: "Noooooooo!" if current_user.nil?
+    return if user_signed_in?
+
+    render json: '401 Unauthorized', status: 401
   end
 end

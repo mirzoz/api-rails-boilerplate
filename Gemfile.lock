@@ -37,11 +37,6 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    active_model_serializers (0.10.10)
-      actionpack (>= 4.1, < 6.1)
-      activemodel (>= 4.1, < 6.1)
-      case_transform (>= 0.2)
-      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (6.0.2.2)
       activesupport (= 6.0.2.2)
       globalid (>= 0.3.6)
@@ -83,8 +78,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    case_transform (0.2)
-      activesupport
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
@@ -147,7 +140,8 @@ GEM
     jaro_winkler (1.5.4-java)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
-    jsonapi-renderer (0.2.2)
+    jsonapi-serializer (2.1.0)
+      activesupport (>= 4.2)
     jwt (2.2.1)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -318,7 +312,6 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
-  active_model_serializers (~> 0.10.10)
   acts_as_tenant (~> 0.4.4)
   bootsnap (>= 1.4.2)
   byebug
@@ -331,6 +324,7 @@ DEPENDENCIES
   ffaker
   guard-rspec
   jbuilder (~> 2.7)
+  jsonapi-serializer
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
   pry

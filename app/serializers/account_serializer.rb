@@ -1,5 +1,4 @@
-# frozen_string_literal: false
-
-class AccountSerializer < ActiveModel::Serializer
-  attributes :id, :name, :country, :account_type, :observation
+class AccountSerializer
+  include JSONAPI::Serializer
+  attributes 
 end
