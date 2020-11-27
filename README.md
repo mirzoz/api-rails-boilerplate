@@ -1,24 +1,13 @@
-# README
+# Modular Api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## .env
 
-Things you may want to cover:
+DATABASE_NAME=modular-api
+DATABASE_HOST=localhost
+DATABASE_USERNAME=lenovo
+DATABASE_PASSWORD=lenovo
+DATABASE_PORT=5432
 
-* Ruby version
+SERVER_PORT= 4000
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+REDIS_URL:redis://localhost:6379/1
