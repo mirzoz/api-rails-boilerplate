@@ -11,13 +11,13 @@ module Api
         respond_with resource,
                      location: after_sign_in_path_for(resource) do |format|
           format.json do
-            render json: UserSerializer.new(resource).serializable_hash
+            render json: resource
           end
         end
       end
 
       def show
-        render json: UserSerializer.new(current_user).serializable_hash
+        render json: current_user
       end
 
       private

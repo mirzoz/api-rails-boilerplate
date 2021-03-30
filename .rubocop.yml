@@ -6,6 +6,8 @@ Style/DocumentationMethod:
   Enabled: false
 Style/MethodCallWithArgsParentheses:
   Enabled: false
+Metrics/BlockLength:
+  Enabled: false
 AllCops:
   EnabledByDefault: true
   Exclude:
