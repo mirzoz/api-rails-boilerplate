@@ -15,15 +15,6 @@ ActiveRecord::Schema.define(version: 2020_04_15_150645) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accounts", force: :cascade do |t|
-    t.string "name"
-    t.string "country"
-    t.integer "account_type", default: 0
-    t.text "observation"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "jwt_blacklists", force: :cascade do |t|
     t.string "jti"
     t.datetime "exp"
@@ -38,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_150645) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
+    t.datetime "reset_password_token_expires_at"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "sign_in_count", default: 0, null: false

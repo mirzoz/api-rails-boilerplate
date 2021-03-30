@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::API
   include ActionController::MimeResponds
+  include ErrorMessages
   respond_to :json
 
   private
