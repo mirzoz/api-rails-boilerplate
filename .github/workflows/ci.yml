@@ -47,8 +47,8 @@ jobs:
         gem install bundler
         bundle install --jobs 4 --retry 3
 
-     - name: Create Database
-       run: |
+    - name: Create Database
+      run: |
          rake db:setup
 
     - name: Run Rubocop
@@ -59,6 +59,6 @@ jobs:
       run: |
         bundle exec brakeman
 
-     - name: Run Test
-       run: |
+    - name: Run Test
+      run: |
          bundle exec rspec
