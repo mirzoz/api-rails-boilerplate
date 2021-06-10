@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/globalwork/deployment
+    destination: /var/www/globalwork/deploy
 permissions:
-  - object: /var/www/globalwork/deployment
+  - object: /var/www/globalwork/deploy
     owner: ubuntu
     group: ubuntu
     pattern: "*"
@@ -14,18 +14,18 @@ permissions:
       - directory
 hooks:
   BeforeInstall:
-    - location: deployment_scripts/arrange-deployment-folders.sh
+    - location: deploy_scripts/arrange-deploy-folders.sh
       runas: root
   AfterInstall:
-    - location: deployment_scripts/db-config.sh
+    - location: deploy_scripts/db-config.sh
       runas: ubuntu
-    - location: deployment_scripts/install-gems.sh
+    - location: deploy_scripts/install-gems.sh
       runas: ubuntu
-    - location: deployment_scripts/compile-assets.sh
+    - location: deploy_scripts/compile-assets.sh
       runas: ubuntu
-    - location: deployment_scripts/run-db-migrations.sh
+    - location: deploy_scripts/run-db-migrations.sh
       runas: ubuntu
 
   ApplicationStart:
-    - location: deployment_scripts/application-start.sh
+    - location: deploy_scripts/application-start.sh
       runas: root
