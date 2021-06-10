@@ -9,4 +9,4 @@
 # Create new deploy folder and make nginx owner
 sudo mkdir /var/www/globalwork/deploy
 
-sudo chown nginx:nginx /var/www/globalwork/deploy
+sudo chown ubuntu:ubuntu /var/www/globalwork/deploy
