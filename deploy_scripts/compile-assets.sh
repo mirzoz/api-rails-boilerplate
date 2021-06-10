@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Go to the deployment directory
-cd /var/www/globalwork/deploy
+sudo cd /var/www/globalwork/deploy
 
 # Load environment variables
-source /etc/profile
+sudo source /etc/profile
 
 # Run asset precompilation
 # - No need to run assets:clobber because this is a new folder. There should be none. We compile assets from the beginning in all deployments.

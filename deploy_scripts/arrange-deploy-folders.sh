@@ -7,6 +7,6 @@
 # mv /var/www/globalwork/deploy /var/www/globalwork/prev-deploy
 
 # Create new deploy folder and make nginx owner
-mkdir /var/www/globalwork/deploy
+sudo mkdir /var/www/globalwork/deploy
 
-chown nginx:nginx /var/www/globalwork/deploy
+sudo chown nginx:nginx /var/www/globalwork/deploy

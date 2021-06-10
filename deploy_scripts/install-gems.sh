@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Go to the deploy directory
-cd /var/www/globalwork/deploy
+sudo cd /var/www/globalwork/deploy
 
 # # Get temporaray credentials for AWS CodeCommit
 # # - Remember that the instance must have access rights to the CodeCommit repositories in Gemfile.
