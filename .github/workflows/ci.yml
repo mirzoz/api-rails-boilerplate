@@ -3,7 +3,7 @@ name: CI
 on: [ push ]
 
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -65,7 +65,7 @@ jobs:
 
   production:
     runs-on: ubuntu
-    needs: [continuous-integration]
+    needs: build
     if: github.ref == 'refs/heads/master'
     steps:
      # Step 1
