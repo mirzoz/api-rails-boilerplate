@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Go to the deploy directory
-sudo cd /var/www/globalwork/deploy
+cd /var/www/globalwork/deploy
 
 # Remove if there is an existing database configuration
 # sudo rm -f config/database.yml
