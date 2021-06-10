@@ -79,7 +79,7 @@ jobs:
       - name: Create CodeDeploy Deploy
         id: deploy
         run: |
-          aws deploy create-deploy \
+          aws deploy create-deployment \
             --application-name api-staging \
             --deployment-group-name staging_gropup \
             --deployment-config-name CodeDeployDefault.OneAtATime \
