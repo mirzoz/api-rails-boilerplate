@@ -14,5 +14,4 @@ cd /var/www/globalwork/deploy
 # - Without development and test gems
 # - Using gemfile in current directory
 # - Also quietly. No need to generate all logs.
-RAILS_ENV=production bundle install
-# --binstubs /var/www/globalwork/shared/bin --gemfile ./Gemfile --path /var/www/globalwork/shared/bundle --without development test --deploy --quiet
+RAILS_ENV=production bundle install --binstubs /var/www/globalwork/shared/bin --gemfile ./Gemfile --path /var/www/globalwork/shared/bundle --without development test --deploy --quiet
