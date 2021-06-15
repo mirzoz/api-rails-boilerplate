@@ -1,7 +1,7 @@
 #!/bin/bash
-source /root/.bash_profile
+sudo source /root/.bash_profile
 # Go to the deployment directory
-cd /var/www/globalwork/deploy
+cd /home/ubuntu/apps/globalwork/deploy
 
 # Load environment variables
 sudo source /etc/profile

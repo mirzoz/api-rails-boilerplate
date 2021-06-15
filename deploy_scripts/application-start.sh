@@ -1,5 +1,5 @@
 #!/bin/bash
-source /root/.bash_profile
+sudo source /root/.bash_profile
 # Load environment variables
 sudo source /etc/profile
 
@@ -9,6 +9,6 @@ sudo echo "Deployment finished at: "$DEPLOYMENT_TIME" UTC" > /var/www/globalwork
 
 # Arrange folder permissions
 sudo chown -R ubuntu:ubuntu /var/www/globalwork/deploy
-sudo chmod -R 775 /var/www/globalwork/deploy
+sudo chmod -R 775 /home/ubuntu/apps/globalwork/deploy
 
 sudo service nginx restart

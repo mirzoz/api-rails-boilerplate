@@ -1,7 +1,7 @@
 #!/bin/bash
-source /root/.bash_profile
+sudo source /root/.bash_profile
 # Go to the deploy directory
-cd /var/www/globalwork/deploy
+cd /home/ubuntu/apps/globalwork/deploy
 
 # Remove if there is an existing database configuration
 # sudo rm -f config/database.yml
