@@ -2,9 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/globalwork/deploy
+    destination: /home/ubuntu/apps/globalwork/deploy
 permissions:
-  - object: /var/www/globalwork/deploy
+  - object: /home/ubuntu/apps/globalwork/deploy
     owner: ubuntu
     group: ubuntu
     pattern: "*"
