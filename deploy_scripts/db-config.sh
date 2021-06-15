@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo source /root/.bash_profile
+# sudo source /root/.bash_profile
 # Go to the deploy directory
 cd /home/ubuntu/apps/globalwork/deploy
 
