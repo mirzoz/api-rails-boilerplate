@@ -1,6 +1,10 @@
 #!/bin/bash
 # sudo source /root/.bash_profile
 # Go to the deploy directory
+
+
+rvm install 2.6.7
+
 cd /home/ubuntu/apps/globalwork/deploy
 
 # # Get temporaray credentials for AWS CodeCommit
