@@ -2,6 +2,6 @@
 
 class HomeController < ApplicationController
   def index
-    render json: 'Hi there! 😉'
+    render json: 'Hi there, Im working! 😉'
   end
 end
