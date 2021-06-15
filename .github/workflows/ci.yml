@@ -3,65 +3,65 @@ name: CI
 on: [ push ]
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       node-version: [12.x]
-  #   env:
-  #     DATABASE_NAME: process
-  #     DATABASE_HOST: 127.0.0.1
-  #     DATABASE_USERNAME: process
-  #     DATABASE_PASSWORD: process
-  #     DATABASE_PORT: 5432
-  #     REDIS_URL: redis://127.0.0.1:6379/1
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    env:
+      DATABASE_NAME: process
+      DATABASE_HOST: 127.0.0.1
+      DATABASE_USERNAME: process
+      DATABASE_PASSWORD: process
+      DATABASE_PORT: 5432
+      REDIS_URL: redis://127.0.0.1:6379/1
 
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   - name: Set up Ruby 2.6
-  #     uses: actions/setup-ruby@v1
-  #     with:
-  #       ruby-version: 2.6.x
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.6
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
 
-  #   - name: Use Node.js 12.x
-  #     uses: actions/setup-node@v1
-  #     with:
-  #       node-version: 12.x
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
 
-  #   # - name: Start Redis
-  #   #   uses: supercharge/redis-github-action@1.1.0
-  #   #   with:
-  #   #     redis-version: 4
+    # - name: Start Redis
+    #   uses: supercharge/redis-github-action@1.1.0
+    #   with:
+    #     redis-version: 4
 
-  #   - name: Setup PostgreSQL
-  #     uses: Harmon758/postgresql-action@v1.0.0
-  #     with:
-  #       postgresql version: 10
-  #       postgresql db: process_test
-  #       postgresql user: process
-  #       postgresql password: process
+    - name: Setup PostgreSQL
+      uses: Harmon758/postgresql-action@v1.0.0
+      with:
+        postgresql version: 10
+        postgresql db: process_test
+        postgresql user: process
+        postgresql password: process
 
-  #   - name: Dependencies
-  #     run: |
-  #       # sudo apt-get install libmagickwand-dev
-  #       gem install bundler
-  #       bundle install --jobs 4 --retry 3
+    - name: Dependencies
+      run: |
+        # sudo apt-get install libmagickwand-dev
+        gem install bundler
+        bundle install --jobs 4 --retry 3
 
-  #   - name: Create Database
-  #     run: |
-  #        rake db:setup
+    - name: Create Database
+      run: |
+         rake db:setup
 
-  #   - name: Run Rubocop
-  #     run: |
-  #       bundle exec rubocop
+    - name: Run Rubocop
+      run: |
+        bundle exec rubocop
 
-  #   - name: Run Brakeman
-  #     run: |
-  #       bundle exec brakeman
+    - name: Run Brakeman
+      run: |
+        bundle exec brakeman
 
-  #   - name: Run Test
-  #     run: |
-  #        bundle exec rspec
+    - name: Run Test
+      run: |
+         bundle exec rspec
 
   production:
     runs-on: ubuntu-latest
