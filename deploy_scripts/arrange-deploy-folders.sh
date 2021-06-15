@@ -1,5 +1,5 @@
-# #!/bin/bash
-
+#!/bin/bash
+source /root/.bash_profile
 # # Remove if previous deployment folder exists
 # rm -rf /var/www/globalwork/prev-deploy
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source /root/.bash_profile
 # Load environment variables
 sudo source /etc/profile
 

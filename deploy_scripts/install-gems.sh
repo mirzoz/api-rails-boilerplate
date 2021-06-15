@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source /root/.bash_profile
 # Go to the deploy directory
 cd /var/www/globalwork/deploy
 
