@@ -3,7 +3,7 @@
 # Go to the deploy directory
 
 
-rvm install 2.6.7
+# rvm install 2.6.7
 
 cd /home/ubuntu/apps/globalwork/deploy
 
