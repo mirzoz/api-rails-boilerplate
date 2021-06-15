@@ -21,8 +21,6 @@ hooks:
       runas: ubuntu
     - location: deploy_scripts/install-gems.sh
       runas: ubuntu
-    - location: deploy_scripts/compile-assets.sh
-      runas: ubuntu
     - location: deploy_scripts/run-db-migrations.sh
       runas: ubuntu
 
