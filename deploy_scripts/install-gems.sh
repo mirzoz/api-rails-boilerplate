@@ -16,4 +16,4 @@ cd /home/ubuntu/apps/globalwork/deploy
 # - Also quietly. No need to generate all logs.
 # sudo gem install bundler
 
-bundle exec bundle install
+bundle install
