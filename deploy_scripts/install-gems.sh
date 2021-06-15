@@ -16,4 +16,4 @@ cd /home/ubuntu/apps/globalwork/deploy
 # - Also quietly. No need to generate all logs.
 sudo gem install bundler
 
-RAILS_ENV=production bundle install --binstubs /home/ubuntu/apps/globalwork/shared/bin --gemfile ./Gemfile --path /home/ubuntu/apps/globalwork/shared/bundle --without development test --deployment --quiet
+RAILS_ENV=production bundle install --binstubs /home/ubuntu/apps/globalwork/shared/bin --gemfile ./Gemfile
